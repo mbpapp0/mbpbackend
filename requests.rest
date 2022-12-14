@@ -1,0 +1,32 @@
+POST http://localhost:3001/api/branches
+Content-Type: application/json 
+
+{
+    "name": "Texas"
+}
+
+
+###
+POST http://localhost:3001/api/users/signup
+Content-Type: application/json
+
+{
+    "firstname": "Samuel",
+    "lastname": "Brady",
+    "email": "james@gmail.com",
+    "password": "cool"
+}
+
+###
+
+POST http://localhost:3001/api/users/signup
+Content-Type: application/json
+
+{
+    "firstname": "DAvid",
+    "lastname": "Martfdin",
+    "email": "james@gmadfiel.com",
+    "password": "cooler3241233",
+    "role": "One",
+    "branch": "6366ca847264383b8f42cc5e"
+}

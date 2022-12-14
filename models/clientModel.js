@@ -1,0 +1,316 @@
+const mongoose = require('mongoose');
+
+const clientSchema = new mongoose.Schema({
+        branch: {
+            type: String,
+            required: true
+        },
+        eligibility: {
+            type: String
+        },
+        childOneName: {
+            type: String
+        },
+        childOneID: {
+            type: String
+        },
+        childTwoName: {
+            type: String
+        },
+        childTwoID: {
+            type: String
+        },
+        childThreeName: {
+            type: String
+        },
+        childThreeID: {
+            type: String
+        },
+        childFourName: {
+            type: String
+        },
+        childFourID: {
+            type: String
+        },
+        childFiveName: {
+            type: String
+        },
+        childFiveID: {
+            type: String
+        },
+        childSixName: {
+            type: String
+        },
+        childSixID: {
+            type: String
+        },
+        childIncome: {
+            type: String
+        },
+        HouseholdMemberOneName: {
+            type: String
+        },
+        HouseholdMemberOneWorkEarnings: {
+            type: String
+        },
+        HouseholdMemberOneWelfare_Alimony_CS: {
+            type: String
+        },
+        HouseholdMemberOneSSPR: {
+            type: String
+        },
+        HouseholdMemberOneOther: {
+            type: String
+        },
+        HouseholdMemberTwoName: {
+            type: String
+        },
+        HouseholdMemberTwoWorkEarnings: {
+            type: String
+        },
+        HouseholdMemberTwoWelfare_Alimony_CS: {
+            type: String
+        },
+        HouseholdMemberTwoSSPR: {
+            type: String
+        },
+        HouseholdMemberTwoOther: {
+            type: String
+        },
+        HouseholdMemberThreeName: {
+            type: String
+        },
+        HouseholdMemberThreeWorkEarnings: {
+            type: String
+        },
+        HouseholdMemberThreeWelfare_Alimony_CS: {
+            type: String
+        },
+        HouseholdMemberThreeSSPR: {
+            type: String
+        },
+        HouseholdMemberThreeOther: {
+            type: String
+        },
+        HouseholdMemberFourName: {
+            type: String
+        },
+        HouseholdMemberFourWorkEarnings: {
+            type: String
+        },
+        HouseholdMemberFourWelfare_Alimony_CS: {
+            type: String
+        },
+        HouseholdMemberFourSSPR: {
+            type: String
+        },
+        HouseholdMemberFourOther: {
+            type: String
+        },
+        HouseholdMemberFiveName: {
+            type: String
+        },
+        HouseholdMemberFiveWorkEarnings: {
+            type: String
+        },
+        HouseholdMemberFiveSSPR: {
+            type: String
+        },
+        HouseholdMemberFiveOther: {
+            type: String
+        },
+        HouseholdMemberSixName: {
+            type: String
+        },
+        HouseholdMemberSixWorkEarnings: {
+            type: String
+        },
+        HouseholdMemberSixWelfare_Alimony_CS: {
+            type: String
+        },
+        HouseholdMemberSixSSPR: {
+            type: String
+        },
+        HouseholdMemberSixOther: {
+            type: String
+        },
+        totalHouseHoldIncome: {
+            type: String
+        },
+        ssn: {
+            type: String
+        },
+        signature: {
+            type: String
+        },
+        printName: {
+            type: String
+        },
+        date: { 
+            type: String
+        },
+        address: {
+            type: String
+        },
+        city: {
+            type: String
+        },
+        zipCode: {
+            type: String
+        },
+        phoneNumber: {
+            type: String
+        },
+        state: {
+            type: String
+        },
+        childOneHeadStart: {
+            type: Boolean
+        },
+        childOneForsterChild: {
+            type: Boolean
+        },
+        childOneRunaway: {
+            type: Boolean
+        },
+        childOneHomeless: {
+            type: Boolean
+        },
+        childTwoHeadStart: {
+            type: Boolean
+        },
+        childTwoForsterChild: {
+            type: Boolean
+        },
+        childTwoRunaway: {
+            type: Boolean
+        },
+        childTwoHomeless: {
+            type: Boolean
+        },
+        childThreeHeadStart: {
+            type: Boolean
+        },
+        childThreeForsterChild: {
+            type: Boolean
+        },
+        childThreeRunaway: {
+            type: Boolean
+        },
+        childThreeHomeless: {
+            type: Boolean
+        },
+        childFourHeadStart: {
+            type: Boolean
+        },
+        childFourForsterChild: {
+            type: Boolean
+        },
+        childFourRunaway: {
+            type: Boolean
+        },
+        childFourHomeless: {
+            type: Boolean
+        },
+        childFiveHeadStart: {
+            type: Boolean
+        },
+        childFiveForsterChild: {
+            type: Boolean
+        },
+        childFiveRunaway: {
+            type: Boolean
+        },
+        childFiveHomeless: {
+            type: Boolean
+        },
+        childSixHeadStart: {
+            type: Boolean
+        },
+        childSixForsterChild: {
+            type: Boolean
+        },
+        childSixRunaway: {
+            type: Boolean
+        },
+        childSixHomeless: {
+            type: Boolean
+        },
+        beforeAfterCare: {
+            type: Boolean
+        },
+        dayCenterSunday: {
+            type: Boolean
+        },
+        dayCenterMonday: {
+            type: Boolean
+        },
+        dayCenterTuesday: {
+            type: Boolean
+        },
+        dayCenterWednesday: {
+            type: Boolean
+        },
+        dayCenterThursday: {
+            type: Boolean
+        },
+        dayCenterFriday: {
+            type: Boolean
+        },
+        dayCenterSaturday: {
+            type: Boolean
+        },
+        breakFast: {
+            type: Boolean
+        },
+        snackLunch: {
+            type: Boolean
+        },
+        snackPM: {
+            type: Boolean
+        },
+        supper: {
+            type: Boolean
+        },
+        snack: {
+            type: Boolean
+        },
+        latino: {
+            type: Boolean
+        },
+        nonLatino: {
+            type: Boolean
+        },
+        asian: {
+            type: Boolean
+        },
+        black: {
+            type: Boolean
+        },
+        white: {
+            type: Boolean
+        },
+        indian: {
+            type: Boolean
+        },
+        hawaiian: {
+            type: Boolean
+        },
+        HouseholdMemberHowOften: {
+            type: String
+        },
+        timeFrom: {
+            type: String
+        },
+        timeFromHour: {
+            type: String
+        },
+        timeTo: {
+            type: String
+        },
+        timeToHour: {
+            type: String
+        },
+}, { timestamps: true});
+
+module.exports = mongoose.model('clients', clientSchema);
