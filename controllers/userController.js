@@ -1,6 +1,7 @@
 const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
 const Log = require('../models/logModel');
+const { default: mongoose } = require('mongoose');
 
 const createToken = (_id) => {
     const token = jwt.sign({_id}, process.env.SECRET, {expiresIn: '3d'});
@@ -62,9 +63,20 @@ const loginUser = async (req, res) => {
     }
 }
 
+const editUser = async(req, res) => {
+    try {
+        const editedUser = await User.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json(editedUser)
+        
+    } catch (error) {
+        res.status(400).json({ error: error.message})
+    }
+}
+
 module.exports = {
     loginUser,
     signupUser,
     getUsers,
-    getSingleUser
+    getSingleUser,
+    editUser
 }
