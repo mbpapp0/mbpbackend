@@ -311,6 +311,24 @@ const clientSchema = new mongoose.Schema({
         timeToHour: {
             type: String
         },
+        childOneAge: {
+            type: String
+        },
+        childTwoAge: {
+            type: String
+        },
+        childThreeAge: {
+            type: String
+        },
+        childFourAge: {
+            type: String
+        },
+        childFiveAge: {
+            type: String
+        },
+        childSixAge: {
+            type: String
+        },
 }, { timestamps: true});
 
 module.exports = mongoose.model('clients', clientSchema);
