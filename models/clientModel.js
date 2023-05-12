@@ -47,6 +47,9 @@ const clientSchema = new mongoose.Schema({
         childIncome: {
             type: String
         },
+        childIncomeFreq: {
+            type: String
+        }, 
         HouseholdMemberOneName: {
             type: String
         },
@@ -141,6 +144,9 @@ const clientSchema = new mongoose.Schema({
             type: String
         },
         signature: {
+            type: String
+        },
+        offSignature: {
             type: String
         },
         printName: {
@@ -329,6 +335,24 @@ const clientSchema = new mongoose.Schema({
         childSixAge: {
             type: String
         },
+        memberOneIncomeFreq: {
+            type: String
+        },
+        memberTwoIncomeFreq: {
+            type: String
+        },
+        memberThreeIncomeFreq: {
+            type: String
+        },
+        memberFourIncomeFreq: {
+            type: String
+        },
+        memberFiveIncomeFreq: {
+            type: String
+        },
+        memberSixIncomeFreq: {
+            type: String
+        }
 }, { timestamps: true});
 
 module.exports = mongoose.model('clients', clientSchema);
