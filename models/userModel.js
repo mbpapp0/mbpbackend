@@ -21,7 +21,6 @@ const userModel = new mongoose.Schema({
     },
     branch: {
         type: String,
-        required: true
     }
 }, {timestamps: true});
 
