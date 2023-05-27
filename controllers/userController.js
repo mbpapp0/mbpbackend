@@ -54,10 +54,11 @@ const loginUser = async (req, res) => {
         const name = user.name;
         const role = user.role;
         const branch = user.branch;
+        const id = user._id;
 
         const log = await Log.create(body);
 
-        res.status(200).json({name, email, branch, role, token});
+        res.status(200).json({id, name, email, branch, role, token});
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
