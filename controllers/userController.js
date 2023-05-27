@@ -57,7 +57,7 @@ const loginUser = async (req, res) => {
         
 
         const log = await Log.create(body);
-        console.log({id, name, email, branch, role, token})
+        console.log({user._id, name, email, branch, role, token})
 
         res.status(200).json({id: user._id, name, email, branch, role, token});
     } catch (error) {
