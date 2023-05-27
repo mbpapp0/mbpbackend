@@ -28,6 +28,16 @@ const createBranch = async(req, res) => {
     }
 }
 
+const editBranchName = async(req, res) => {
+    try {
+        const editedBranchName = await Branch.findByIdAndUpdate(req.params.id, {name: req.body.name});
+        res.status(200).json(editedBranchName)
+        
+    } catch (error) {
+        res.status(400).json({ error: error.message})
+    }
+}
+
 const deleteBranch = async(req, res) => {
     const { id } = req.params;
 
@@ -48,5 +58,6 @@ module.exports = {
     getBranch,
     getSingleBranch,
     createBranch,
+    editBranchName,
     deleteBranch
 };
