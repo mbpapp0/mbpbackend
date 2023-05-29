@@ -71,9 +71,9 @@ const editUser = async(req, res) => {
         const user = User.findById(req.params.id);
         const exists = User.find({ email: req.body.email });
         
-        console.log(user.toObject()== exists.toObject());
-        console.log(user.toObject());
-        console.log(exists.toObject());
+        console.log(user.toObject({ getters: true }) == exists.toObject({ getters: true }));
+        console.log(user.toObject({ getters: true }));
+        console.log(exists.toObject({ getters: true }));
          
     
         // if(exists && user != exists){return}
