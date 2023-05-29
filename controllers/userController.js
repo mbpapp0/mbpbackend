@@ -71,7 +71,7 @@ const editUser = async(req, res) => {
         const user = User.findById(req.params.id);
         const exists = User.find({ email: req.body.email });
         
-        console.log(email == exists);
+        console.log(user == exists);
         console.log(email);
         console.log(exists);
          
