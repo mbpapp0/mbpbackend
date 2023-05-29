@@ -71,10 +71,10 @@ const editUser = async(req, res) => {
         const user = User.findById(req.params.id);
         const exists = User.find({ email });
     
-        console.log(user);
-        if(user.email != email && exists){
-         return console.log('This email is already in use');
-        }
+        console.log(user == exists);
+    
+        if(user != exists){return)
+        
         
     try {
         const editedUser = await User.findByIdAndUpdate(req.params.id, req.body);
