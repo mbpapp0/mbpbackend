@@ -68,7 +68,7 @@ const loginUser = async (req, res) => {
 
 const editUser = async(req, res) => {
         const {name, email} = req.body;
-        const user = User.findByID(req.params.id);
+        const user = User.findById(req.params.id);
         const exists = User.find({ email });
     
         console.log(user);
