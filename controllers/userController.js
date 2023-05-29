@@ -70,10 +70,13 @@ const editUser = async(req, res) => {
         const {name, email} = req.body;
         const user = User.findById(req.params.id);
         const exists = User.find({ email });
+        
+        console.log(email == exists.email);
+        console.log(email);
+        console.log(exists.email);
+         
     
-        console.log(user == exists);
-    
-        if(user != exists){return}
+        // if(exists && user != exists){return}
         
         
     try {
