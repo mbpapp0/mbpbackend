@@ -73,7 +73,7 @@ const editUser = async(req, res) => {
     
         console.log(user == exists);
     
-        if(user != exists){return)
+        if(user != exists){return}
         
         
     try {
