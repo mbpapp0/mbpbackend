@@ -24,6 +24,7 @@ const getSingleUser = async (req, res) => {
 
 const signupUser = async(req, res) => {
     const { name, email, password, role, branch } = req.body;
+    
 
     try {
         const user = await User.signup(name, email, password, role, branch);
@@ -66,6 +67,15 @@ const loginUser = async (req, res) => {
 }
 
 const editUser = async(req, res) => {
+        const {name, email} = req.body;
+        const user = User.findByID(req.params.id);
+        const exists = User.find({ email });
+    
+        console.log(user);
+        if(user.email != email && exists){
+         return console.log('This email is already in use');
+        }
+        
     try {
         const editedUser = await User.findByIdAndUpdate(req.params.id, req.body);
         res.status(200).json(editedUser)
