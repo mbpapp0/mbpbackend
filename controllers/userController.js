@@ -70,10 +70,10 @@ const editUser = async(req, res) => {
         const {name, email, sameEmail} = req.body;
       
         const exists = User.find({ email: req.body.email });
-        
-        console.log(sameEmail);
+   
+        console.log(req.body)
     
-        if(!sameEmail && exists){ console.log('In use') }
+        if(!sameEmail && exists){ console.log(sameEmail)  console.log('In use') }
          
     
         // if(exists && user != exists){return}
