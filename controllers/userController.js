@@ -67,13 +67,13 @@ const loginUser = async (req, res) => {
 }
 
 const editUser = async(req, res) => {
-        const {name, email} = req.body;
-        const user = User.findById(req.params.id);
+        const {name, email, sameEmail} = req.body;
+      
         const exists = User.find({ email: req.body.email });
         
-        console.log(user.toObject({ getters: true }) == exists.toObject({ getters: true }));
-        console.log(user.toObject({ getters: true }));
-        console.log(exists.toObject({ getters: true }));
+        console.log(sameEmail);
+    
+        if(!sameEmail && exists){ console.log('In use') }
          
     
         // if(exists && user != exists){return}
