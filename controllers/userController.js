@@ -73,7 +73,7 @@ const editUser = async(req, res) => {
    
         console.log(req.body)
     
-        if(!sameEmail && exists){ console.log(sameEmail)  console.log('In use') }
+      //  if(!sameEmail && exists){ console.log(sameEmail)  console.log('In use') }
          
     
         // if(exists && user != exists){return}
