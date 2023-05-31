@@ -9,6 +9,12 @@ const createToken = (_id) => {
     return token;
 }
 
+const getAllUsers = async(req, res) => {
+    const users = await User.find();
+
+    res.json(users);
+}
+
 const getUsers = async(req, res) => {
     const users = await User.find({ branch: req.params.id});
 
