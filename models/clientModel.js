@@ -146,6 +146,12 @@ const clientSchema = new mongoose.Schema({
         signature: {
             type: String
         },
+        signDate: {
+            type: String
+        },
+        offSignDate: {
+            type: String
+        },
         offSignature: {
             type: String
         },
