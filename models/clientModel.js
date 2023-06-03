@@ -138,7 +138,10 @@ const clientSchema = new mongoose.Schema({
             type: String
         },
         totalHouseHoldIncome: {
-            type: String
+            type: Number
+        },
+        totalHouseHoldMembers: {
+           type: String
         },
         ssn: {
             type: String
