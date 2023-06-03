@@ -26,9 +26,16 @@ const addClient = async (req, res) => {
         res.status(400).json({error: error.message});
     }
 }
+
+const testClient = async (req, res, next) => {
+    console.log(req.body);
+    next();
+}
+
        
 module.exports = {
     getClients,
     getClient,
-    addClient
+    addClient,
+    testClient
 }
