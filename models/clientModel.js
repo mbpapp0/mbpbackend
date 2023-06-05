@@ -185,6 +185,9 @@ const clientSchema = new mongoose.Schema({
         childOneForsterChild: {
             type: Boolean
         },
+        childOneMigrant: {
+           type: Boolean
+        },
         childOneRunaway: {
             type: Boolean
         },
@@ -196,6 +199,9 @@ const clientSchema = new mongoose.Schema({
         },
         childTwoForsterChild: {
             type: Boolean
+        },
+        childTwoMigrant: {
+           type: Boolean
         },
         childTwoRunaway: {
             type: Boolean
@@ -209,6 +215,9 @@ const clientSchema = new mongoose.Schema({
         childThreeForsterChild: {
             type: Boolean
         },
+        childThreeMigrant: {
+           type: Boolean
+        },
         childThreeRunaway: {
             type: Boolean
         },
@@ -220,6 +229,9 @@ const clientSchema = new mongoose.Schema({
         },
         childFourForsterChild: {
             type: Boolean
+        },
+        childFourMigrant: {
+           type: Boolean
         },
         childFourRunaway: {
             type: Boolean
@@ -233,6 +245,9 @@ const clientSchema = new mongoose.Schema({
         childFiveForsterChild: {
             type: Boolean
         },
+        childFiveMigrant: {
+           type: Boolean
+        },
         childFiveRunaway: {
             type: Boolean
         },
@@ -244,6 +259,9 @@ const clientSchema = new mongoose.Schema({
         },
         childSixForsterChild: {
             type: Boolean
+        },
+        childSixMigrant: {
+           type: Boolean
         },
         childSixRunaway: {
             type: Boolean
