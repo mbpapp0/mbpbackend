@@ -74,6 +74,10 @@ const loginUser = async (req, res) => {
 
 const editUser = async(req, res) => {
         const {name, email, sameEmail} = req.body;
+    
+        if(!name || !email){
+          return res.status(400).json({error: 'Please fill in the field'});
+        }
       
         const exists = User.find({ email: req.body.email });
    
