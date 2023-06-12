@@ -26,3 +26,7 @@ app.use('/api/freemeals', require('./routes/freeMealRoutes'));
 app.use('/api/reducedmeals', require('./routes/reducedMealRoutes'));
 app.use('/api/clients', require('./routes/clientRoutes'));
 app.use('/api/children', require('./routes/childrenRoutes'));
+
+app.post('/connect', (req, res) => {
+   res.json(req.body);
+})
