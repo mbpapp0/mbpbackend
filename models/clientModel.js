@@ -116,6 +116,9 @@ const clientSchema = new mongoose.Schema({
         HouseholdMemberFiveWorkEarnings: {
             type: String
         },
+        HouseholdMemberFiveWelfare_Alimony_CS: {
+            type: String
+        },
         HouseholdMemberFiveSSPR: {
             type: String
         },
