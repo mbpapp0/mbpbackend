@@ -8,6 +8,12 @@ const clientSchema = new mongoose.Schema({
         eligibility: {
             type: String
         },
+        userID: {
+         type: String
+        },
+        status: {
+          type: String
+        },
         childOneName: {
             type: String
         },
