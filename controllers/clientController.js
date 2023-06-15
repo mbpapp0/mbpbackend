@@ -38,6 +38,17 @@ const addClient = async (req, res) => {
     }
 }
 
+const editClient = async(req, res) => {
+      
+    try {
+        const editedClient = await Client.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json(editedClient)
+        
+    } catch (error) {
+        res.status(400).json({ error: error.message})
+    }
+}
+
 const testClient = async (req, res, next) => {
     console.log(req.body);
     next();
@@ -49,5 +60,6 @@ module.exports = {
     getClient,
     addClient,
     getClientByUser,
+    editClient,
     testClient
 }
