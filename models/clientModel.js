@@ -155,10 +155,22 @@ const clientSchema = new mongoose.Schema({
         signDate: {
             type: String
         },
-        offSignDate: {
+        detOfficialSignDate: {
             type: String
         },
-        offSignature: {
+        detOfficialSignature: {
+            type: String
+        },
+        conOfficialSignDate: {
+            type: String
+        },
+        conOfficialSignature: {
+            type: String
+        },
+        folOfficialSignDate: {
+            type: String
+        },
+        folOfficialSignature: {
             type: String
         },
         printName: {
