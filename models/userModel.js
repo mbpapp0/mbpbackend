@@ -54,8 +54,7 @@ userModel.statics.signup = async function(name, email, password, role, branch){
     return user;
 }
 
-// Loginf
-.Logic
+// Login Logic
 userModel.statics.login = async function(email, password){
     if(!email || !password){
         throw Error('Please fill in all fields');
