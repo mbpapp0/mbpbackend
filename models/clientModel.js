@@ -14,6 +14,9 @@ const clientSchema = new mongoose.Schema({
         status: {
           type: String
         },
+        childrenIds: {
+          type: Array
+        },
         childOneName: {
             type: String
         },
