@@ -31,6 +31,7 @@ const getClient = async (req, res) => {
 const addClient = async (req, res, next) => {
     try {
         const newClient = await Client.create(req.body);
+        console.log(req.body.childrenIds);
 
         res.status(200).json(newClient);
         console.log(newClient.childrenIds);
