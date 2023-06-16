@@ -16,6 +16,9 @@ const childrenSchema = new mongoose.Schema({
         type: Number,
         required: true
     }, 
+    status: {
+      type: String
+    },
     title_xx: {
         type: String,
         required: true
