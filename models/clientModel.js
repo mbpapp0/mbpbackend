@@ -15,7 +15,8 @@ const clientSchema = new mongoose.Schema({
           type: String
         },
         childrenIds: {
-          type: [String]
+          type: Array,
+          default: []
         },
         childOneName: {
             type: String
