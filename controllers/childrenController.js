@@ -16,8 +16,20 @@ const addChild = async(req, res) => {
     }
 }
 
+const approveChild = async(req, res) => {
+       
+    try {
+        const approvedChild = await Child.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json(approvedChild)
+        
+    } catch (error) {
+        res.status(400).json({ error: error.message})
+    }
+}
+
 
 module.exports = {
     getChildren,
-    addChild
+    addChild,
+    approveChild
 }
