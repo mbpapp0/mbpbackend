@@ -11,7 +11,7 @@ const addChild = async(req, res) => {
 
     try{
         res.status(200).json(child);
-        console.log(child)
+        
     } catch(err){
         res.status(400).json({ error: error.message})
     }
