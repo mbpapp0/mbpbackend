@@ -8,6 +8,6 @@ const {
 
 router.get('/:id', getChildren);
 router.post('/', addChild);
-router.put('approve/:id', approveChild)
+router.put('/approve/:id', approveChild)
 
 module.exports = router;
