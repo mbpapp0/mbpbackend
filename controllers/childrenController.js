@@ -10,9 +10,8 @@ const addChild = async(req, res) => {
     const child = await Child.create(req.body);
 
     try{
-       // res.status(200).json(child);
-        res.status(200).send(child._id);
-        console.log(child._id);
+       res.status(200).json(child);
+        
     } catch(err){
         res.status(400).json({ error: error.message})
     }
