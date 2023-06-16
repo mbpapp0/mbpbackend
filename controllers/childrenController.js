@@ -24,12 +24,12 @@ const addChild = async(req, res) => {
 }
 
 const approveChild = async(req, res) => {
-    res.send('Hello')
-    return;
+   console.log(req.body);
        
     try {
         const approvedChild = await Child.findByIdAndUpdate(req.params.id, req.body);
-        res.status(200).json(approvedChild)
+        res.status(200).json(approvedChild);
+        
         
     } catch (error) {
         res.status(400).json({ error: error.message})
