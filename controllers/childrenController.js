@@ -6,6 +6,12 @@ const getChildren = async (req, res) => {
     res.status(200).json(children);
 }
 
+const getChildrenByUser = async (req, res) => {
+    const children = await Child.find({ user: req.params.id});
+
+    res.status(200).json(children);
+}
+
 const addChild = async(req, res) => {
     const child = await Child.create(req.body);
 
@@ -32,5 +38,6 @@ const approveChild = async(req, res) => {
 module.exports = {
     getChildren,
     addChild,
-    approveChild
+    approveChild,
+    getChildrenByUser
 }
