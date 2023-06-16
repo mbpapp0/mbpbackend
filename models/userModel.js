@@ -25,6 +25,8 @@ const userModel = new mongoose.Schema({
 }, {timestamps: true});
 
 
+// Signup Logic
+
 userModel.statics.signup = async function(name, email, password, role, branch){
     if(!name || !email || !password || !role || !branch){
         throw Error('Please fill in all fields')
@@ -52,6 +54,8 @@ userModel.statics.signup = async function(name, email, password, role, branch){
     return user;
 }
 
+// Loginf
+.Logic
 userModel.statics.login = async function(email, password){
     if(!email || !password){
         throw Error('Please fill in all fields');
