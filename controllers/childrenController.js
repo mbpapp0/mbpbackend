@@ -24,6 +24,8 @@ const addChild = async(req, res) => {
 }
 
 const approveChild = async(req, res) => {
+    res.send('Hello')
+    return;
        
     try {
         const approvedChild = await Child.findByIdAndUpdate(req.params.id, req.body);
