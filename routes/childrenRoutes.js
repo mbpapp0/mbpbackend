@@ -2,10 +2,12 @@ const express = require('express');
 const router = express.Router();
 const {
     getChildren,
-    addChild
+    addChild,
+    approveChild
 } = require('../controllers/childrenController')
 
-router.get('/:id', getChildren)
-router.post('/', addChild)
+router.get('/:id', getChildren);
+router.post('/', addChild);
+router.put('/approve/:id', addChild)
 
 module.exports = router;
