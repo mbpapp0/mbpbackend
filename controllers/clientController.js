@@ -45,7 +45,8 @@ const editClient = async(req, res) => {
       
     try {
         const editedClient = await Client.findByIdAndUpdate(req.params.id, req.body);
-        await Child.updateMany({ user: req.params.id }, { status: 'Approved' });
+       const editChild = await Child.updateMany({ user: req.params.id }, { status: 'Approved' });
+        console.log(editChild)
         res.status(200).json(editedClient)
         
     } catch (error) {
