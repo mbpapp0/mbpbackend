@@ -1,18 +1,21 @@
 const mongoose = require('mongoose');
 const Branch = require('../models/branchModel');
 
+// Get all branches 
 const getBranch = async(req, res) => {
     const branches = await Branch.find({}).sort({ createdAt: 1});
 
     res.status(200).json(branches);
 }
 
+// Get a single branch
 const getSingleBranch = async (req, res) => {
     const singleBranch = await Branch.findById(req.params.id);
 
     res.status(200).json(singleBranch);
 }
 
+// Creates a new branch
 const createBranch = async(req, res) => {
     if(!req.body.name){
         return res.status(400).json({ error: 'Please enter a name'});
@@ -28,6 +31,8 @@ const createBranch = async(req, res) => {
     }
 }
 
+// Edits a Branch Name
+
 const editBranchName = async(req, res) => {
     try {
         const editedBranchName = await Branch.findByIdAndUpdate(req.params.id, {name: req.body.name});
@@ -38,6 +43,7 @@ const editBranchName = async(req, res) => {
     }
 }
 
+// Deletes a Brancg
 const deleteBranch = async(req, res) => {
     const { id } = req.params;
 
