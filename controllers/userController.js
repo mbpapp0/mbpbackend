@@ -3,31 +3,35 @@ const jwt = require('jsonwebtoken');
 const Log = require('../models/logModel');
 const { default: mongoose } = require('mongoose');
 
+// Token for user authentication
 const createToken = (_id) => {
     const token = jwt.sign({_id}, process.env.SECRET, {expiresIn: '3d'});
 
     return token;
 }
 
+// Gets all users
 const getAllUsers = async(req, res) => {
     const users = await User.find();
 
     res.json(users);
 }
 
+// Gets all users from a specific branch
 const getUsers = async(req, res) => {
     const users = await User.find({ branch: req.params.id});
 
     res.json(users);
 }
 
+// Gets a single user
 const getSingleUser = async (req, res) => {
     const singleUser = await User.findById(req.params.id);
 
     res.status(200).json(singleUser);
 }
 
-
+// Signup User
 const signupUser = async(req, res) => {
     const { name, email, password, role, branch } = req.body;
     
@@ -48,6 +52,7 @@ const signupUser = async(req, res) => {
     }
 }
 
+// Logins user
 const loginUser = async (req, res) => {
     const { email, password} = req.body;
 
@@ -72,6 +77,7 @@ const loginUser = async (req, res) => {
     }
 }
 
+// edit user information
 const editUser = async(req, res) => {
         const {name, email, sameEmail} = req.body;
     
@@ -81,12 +87,7 @@ const editUser = async(req, res) => {
       
         const exists = User.find({ email: req.body.email });
    
-        console.log(req.body)
-    
-      //  if(!sameEmail && exists){ console.log(sameEmail)  console.log('In use') }
-         
-    
-        // if(exists && user != exists){return}
+        
         
         
     try {
@@ -97,6 +98,8 @@ const editUser = async(req, res) => {
         res.status(400).json({ error: error.message})
     }
 }
+
+// Deletes a user
 const deleteUser = async(req, res) => {
     try {
         const editedUser = await User.findByIdAndDelete(req.params.id);
