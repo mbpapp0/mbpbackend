@@ -1,5 +1,8 @@
+// Data for each individual child entered in all IEG Forms
+
 const Child = require('../models/childrenModel');
 
+// Get all children from a specific branch
 const getChildren = async (req, res) => {
     const children = await Child.find({ branch: req.params.id});
 
@@ -12,6 +15,7 @@ const getChildrenByUser = async (req, res) => {
     res.status(200).json(children);
 }
 
+// Add a single child data 
 const addChild = async(req, res) => {
     const child = await Child.create(req.body);
 
@@ -23,23 +27,11 @@ const addChild = async(req, res) => {
     }
 }
 
-const approveChild = async(req, res) => {
-   console.log(req.body);
-       
-    try {
-        const approvedChild = await Child.findByIdAndUpdate(req.params.id, req.body);
-        res.status(200).json(approvedChild);
-        
-        
-    } catch (error) {
-        res.status(400).json({ error: error.message})
-    }
-}
+
 
 
 module.exports = {
     getChildren,
     addChild,
-    approveChild,
     getChildrenByUser
 }
