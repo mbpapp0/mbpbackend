@@ -1,5 +1,6 @@
 const FreeMeal = require('../models/freeMealModel');
 
+// Create a free meal guidelines for a specific branch
 const getFreeMealData = async(req, res) => {
     const freeMeal = await FreeMeal.find({ branch: req.params.id});
 
@@ -17,6 +18,7 @@ const createFreeMealData = async (req, res) => {
     }
 }
 
+// Edits free meal data for a specific branch
 const editFreeMealData = async (req, res) => {
     try {
         const edited = await FreeMeal.findByIdAndUpdate(req.params.id, req.body);
