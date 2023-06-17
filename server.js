@@ -1,3 +1,4 @@
+// Packages used
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
@@ -5,6 +6,8 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 const db = process.env.DB;
+
+// Database Connection & App Initialization
 
 mongoose.connect(db).then(() => {
     console.log(`Connected to DB`);
@@ -15,10 +18,12 @@ mongoose.connect(db).then(() => {
     console.log(error.message)
 });
 
+// Data Parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(cors());
 
+// Routes 
 app.use('/api/branches', require('./routes/branchRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/logs', require('./routes/logRoutes'));
@@ -27,6 +32,8 @@ app.use('/api/reducedmeals', require('./routes/reducedMealRoutes'));
 app.use('/api/clients', require('./routes/clientRoutes'));
 app.use('/api/children', require('./routes/childrenRoutes'));
 
+
+// Start Server when user is on the app
 app.post('/connect', (req, res) => {
    res.json(req.body);
 });
