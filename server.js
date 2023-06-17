@@ -29,4 +29,9 @@ app.use('/api/children', require('./routes/childrenRoutes'));
 
 app.post('/connect', (req, res) => {
    res.json(req.body);
-})
+});
+
+app.get('/connect', (req, res) => {
+   res.send('Connected');
+});
+
