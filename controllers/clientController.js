@@ -32,7 +32,6 @@ const getClient = async (req, res) => {
 const addClient = async (req, res, next) => {
     try {
         const newClient = await Client.create(req.body);
-        console.log(req.body.childrenIds);
 
         res.status(200).json(newClient);
         
@@ -46,8 +45,9 @@ const editClient = async(req, res) => {
       
     try {
 
-        const editedClient = await Client.findByIdAndUpdate(req.params.id, req.body);
-        const editChild = await Child.updateMany({ user: editedClient.userID }, { status: 'Approved' });
+        const editedClient = await Client.findOneAndUpdate({ userID: req.params.id }, req.body);
+        
+        const editChild = await Child.updateMany({ user: req.params.id }, { status: 'Approved' });
         console.log(req.params.id);
         console.log(editChild);
         console.log(req.body)
