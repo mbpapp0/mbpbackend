@@ -1,4 +1,5 @@
 const Client = require('../models/clientModel');
+const Child = require('../models/childrenModel');
 
 const getClients = async (req, res) => {
     const clients = await Client.find({ branch: req.params.id});
@@ -34,8 +35,7 @@ const addClient = async (req, res, next) => {
         console.log(req.body.childrenIds);
 
         res.status(200).json(newClient);
-        console.log(newClient.childrenIds);
-        next();
+        
     } catch (error) {2
         res.status(400).json({error: error.message});
     }
@@ -45,6 +45,7 @@ const editClient = async(req, res) => {
       
     try {
         const editedClient = await Client.findByIdAndUpdate(req.params.id, req.body);
+        await Child.updateMany({ user: req.params.id }, { status: 'Approved' });
         res.status(200).json(editedClient)
         
     } catch (error) {
