@@ -4,7 +4,9 @@ const branchSchema = new mongoose.Schema({
     name: {
         type: String, 
         required: true,
-        unique: true
+        unique: true,
+        uniqueCaseInsensitive: true,
+        uniqueErrorMsg: 'Branch Already Exists'
     }
 }, { timestamps: true });
 
