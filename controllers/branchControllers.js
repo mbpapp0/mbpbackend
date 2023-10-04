@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Branch = require('../models/branchModel');
-
+const User = require('../models/userModel');
 // Get all branches 
 const getBranch = async(req, res) => {
     const branches = await Branch.find({}).sort({ createdAt: 1});
@@ -52,7 +52,7 @@ const deleteBranch = async(req, res) => {
     }
     
     const branch = await Branch.findByIdAndDelete(id);
-    
+    await User.deleteMany({ branch: id});
     if(!branch){
         res.status(404).json({ error: 'Branch does not exist'});
     }
