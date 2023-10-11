@@ -21,11 +21,6 @@ const createBranch = async(req, res) => {
         return res.status(400).json({ error: 'Please enter a name'});
     }
 
-    const branchName = await Branch.find(req.body.name);
-
-    if(branchName){
-      return res.status(400).json({ error: 'Branch Already Exists'});
-    }
     
     try {
 
