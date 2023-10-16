@@ -321,7 +321,10 @@ const clientSchema = new mongoose.Schema({
         breakFast: {
             type: Boolean
         },
-        snackLunch: {
+        snackAM: {
+          type: Boolean
+        },
+        lunch: {
             type: Boolean
         },
         snackPM: {
@@ -330,7 +333,7 @@ const clientSchema = new mongoose.Schema({
         supper: {
             type: Boolean
         },
-        snack: {
+        eveningSnack: {
             type: Boolean
         },
         latino: {
